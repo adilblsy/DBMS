@@ -265,7 +265,7 @@ WHERE CP.Chitty_Payed_Branch != CT.Branch_Name;
         C.Name, 
         C.Pan_Number, 
         C.Mobile_Number, 
-        C.Address, 
+        C.Adress, 
         C.Email_Id 
     FROM 
         Customer C
@@ -278,7 +278,7 @@ WHERE CP.Chitty_Payed_Branch != CT.Branch_Name;
     WHERE 
         CT.Chitty_Status = 'closed'
     GROUP BY 
-        CA.Auction_Branch, CA.Amount_Auctioned, C.Aadhar_Number, C.Name, C.Pan_Number, C.Mobile_Number, C.Address, C.Email_Id 
+        CA.Auction_Branch, CA.Amount_Auctioned, C.Aadhar_Number, C.Name, C.Pan_Number, C.Mobile_Number, C.Adress, C.Email_Id 
     ORDER BY 
         CA.Amount_Auctioned DESC 
     LIMIT 1
@@ -292,7 +292,7 @@ UNION ALL
         C.Name, 
         C.Pan_Number, 
         C.Mobile_Number, 
-        C.Address, 
+        C.Adress, 
         C.Email_Id 
     FROM 
         Customer C
@@ -305,11 +305,18 @@ UNION ALL
     WHERE 
         CT.Chitty_Status = 'closed'
     GROUP BY 
-        CA.Auction_Branch, CA.Amount_Auctioned, C.Aadhar_Number, C.Name, C.Pan_Number, C.Mobile_Number, C.Address, C.Email_Id 
+        CA.Auction_Branch, CA.Amount_Auctioned, C.Aadhar_Number, C.Name, C.Pan_Number, C.Mobile_Number, C.Adress, C.Email_Id 
     ORDER BY 
         CA.Amount_Auctioned ASC 
     LIMIT 1
 );
 
 
+DROP TABLE Loan_Payment;
+DROP TABLE Chitty_Auction;
+DROP TABLE Chitty_Payment;
+DROP TABLE Customer_Chitty;
+DROP TABLE Loan;
+DROP TABLE Chitty;
+DROP TABLE Customer;
 DROP DATABASE Chitty;
